@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Certify Pro Consultancy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <img src="assets/logo.png" alt="Certify Pro Consultancy" class="nav__logo-img">
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item dropdown">
+                        <a href="#services" class="nav__link">Services</a>
+                        <ul class="dropdown__menu">
+                            <li><a href="bis-registration.html">BIS Registration</a></li>
+                            <li><a href="erp-consultation.html">ERP Consultation</a></li>
+                            <li><a href="wpc-license.html">WPC License</a></li>
+                            <li><a href="bee-certification.html">BEE Certification</a></li>
+                            <li><a href="msme-registration.html">MSME Registration</a></li>
+                            <li><a href="gst-registration.html">GST Registration</a></li>
+                            <li><a href="iec-code.html">IEC Code Registration</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link active-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero__bg"></div>
+            <div class="container">
+                <div class="page-hero__content" data-aos="fade-up">
+                    <h1 class="page-hero__title">Get In Touch</h1>
+                    <p class="page-hero__subtitle">Ready to start your certification journey? We're here to help</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-page section">
+            <div class="container">
+                <div class="contact-page__container grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-section" data-aos="fade-right">
+                        <h2 class="contact-form__title">Send Us a Message</h2>
+                        <p class="contact-form__subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
+                        
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-row">
+                                <div class="form__group">
+                                    <label for="firstName" class="form__label">First Name *</label>
+                                    <input type="text" id="firstName" class="form__input" placeholder="Enter your first name" required>
+                                </div>
+                                <div class="form__group">
+                                    <label for="lastName" class="form__label">Last Name *</label>
+                                    <input type="text" id="lastName" class="form__input" placeholder="Enter your last name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form__group">
+                                    <label for="email" class="form__label">Email Address *</label>
+                                    <input type="email" id="email" class="form__input" placeholder="Enter your email" required>
+                                </div>
+                                <div class="form__group">
+                                    <label for="phone" class="form__label">Phone Number *</label>
+                                    <input type="tel" id="phone" class="form__input" placeholder="Enter your phone number" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="company" class="form__label">Company Name</label>
+                                <input type="text" id="company" class="form__input" placeholder="Enter your company name">
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="service" class="form__label">Service Required</label>
+                                <select id="service" class="form__input form__select">
+                                    <option value="">Select a service</option>
+                                    <option value="bis-registration">BIS Registration</option>
+                                    <option value="erp-consultation">ERP Consultation</option>
+                                    <option value="wpc-license">WPC License</option>
+                                    <option value="bee-certification">BEE Certification</option>
+                                    <option value="msme-registration">MSME Registration</option>
+                                    <option value="gst-registration">GST Registration</option>
+                                    <option value="iec-code">IEC Code Registration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="message" class="form__label">Message *</label>
+                                <textarea id="message" class="form__input form__textarea" placeholder="Tell us about your requirements" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary form__btn">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info-section" data-aos="fade-left">
+                        <h2 class="contact-info__title">Contact Information</h2>
+                        <p class="contact-info__subtitle">Get in touch with us through any of these channels</p>
+                        
+                        <div class="contact-info__items">
+                            <div class="contact-info__item">
+                                <div class="contact-info__icon">
+                                    <i class="icon-location"></i>
+                                </div>
+                                <div class="contact-info__content">
+                                    <h4 class="contact-info__label">Office Address</h4>
+                                    <p class="contact-info__text">123 Business District<br>Connaught Place, New Delhi<br>Delhi 110001, India</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info__item">
+                                <div class="contact-info__icon">
+                                    <i class="icon-phone"></i>
+                                </div>
+                                <div class="contact-info__content">
+                                    <h4 class="contact-info__label">Phone Numbers</h4>
+                                    <p class="contact-info__text">+91 98765 43210<br>+91 11 4567 8900</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info__item">
+                                <div class="contact-info__icon">
+                                    <i class="icon-email"></i>
+                                </div>
+                                <div class="contact-info__content">
+                                    <h4 class="contact-info__label">Email Addresses</h4>
+                                    <p class="contact-info__text">info@certifyproconnultancy.com<br>support@certifyproconnultancy.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info__item">
+                                <div class="contact-info__icon">
+                                    <i class="icon-clock">🕒</i>
+                                </div>
+                                <div class="contact-info__content">
+                                    <h4 class="contact-info__label">Business Hours</h4>
+                                    <p class="contact-info__text">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM<br>Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Map Placeholder -->
+                        <div class="contact-map">
+                            <div class="map-placeholder">
+                                <i class="icon-map">🗺️</i>
+                                <p>Interactive Map</p>
+                                <small>Click to view location on Google Maps</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq section">
+            <div class="container">
+                <h2 class="section__title text-center" data-aos="fade-up">Frequently Asked Questions</h2>
+                <div class="faq__container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <h4>How long does the certification process take?</h4>
+                            <span class="faq__icon">+</span>
+                        </div>
+                        <div class="faq__answer">
+                            <p>The timeline varies depending on the type of certification. Generally, BIS registration takes 15-30 days, GST registration takes 3-7 days, and MSME registration takes 7-15 days. We provide detailed timelines during consultation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <h4>What documents are required for certification?</h4>
+                            <span class="faq__icon">+</span>
+                        </div>
+                        <div class="faq__answer">
+                            <p>Document requirements vary by certification type. Common documents include company registration certificate, PAN card, address proof, and specific technical documents. We provide a complete checklist after understanding your requirements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <h4>Do you provide post-certification support?</h4>
+                            <span class="faq__icon">+</span>
+                        </div>
+                        <div class="faq__answer">
+                            <p>Yes, we provide comprehensive post-certification support including compliance monitoring, renewal reminders, and ongoing consultation to ensure your business remains compliant with all regulations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <div class="faq__question">
+                            <h4>What are your service charges?</h4>
+                            <span class="faq__icon">+</span>
+                        </div>
+                        <div class="faq__answer">
+                            <p>Our charges are competitive and transparent with no hidden costs. Pricing varies based on the complexity and type of certification. We provide detailed quotations after understanding your specific requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta section">
+            <div class="cta__bg"></div>
+            <div class="container">
+                <div class="cta__content" data-aos="fade-up">
+                    <h2 class="cta__title">Ready to Get Certified?</h2>
+                    <p class="cta__description">Start your certification journey today with expert guidance</p>
+                    <a href="tel:+919876543210" class="btn btn--white">Call Now: +91 98765 43210</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__gradient"></div>
+        <div class="container">
+            <div class="footer__container grid">
+                <div class="footer__content">
+                    <img src="assets/logo.png" alt="Certify Pro Consultancy" class="footer__logo">
+                    <p class="footer__description">
+                        Professional certification consultancy helping businesses achieve compliance and growth through expert guidance.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="icon-facebook"></i></a>
+                        <a href="#" class="footer__social-link"><i class="icon-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="icon-linkedin"></i></a>
+                        <a href="#" class="footer__social-link"><i class="icon-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html" class="footer__link">Home</a></li>
+                        <li><a href="about.html" class="footer__link">About</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__services">
+                    <h4 class="footer__title">Services</h4>
+                    <ul class="footer__list">
+                        <li><a href="bis-registration.html" class="footer__link">BIS Registration</a></li>
+                        <li><a href="erp-consultation.html" class="footer__link">ERP Consultation</a></li>
+                        <li><a href="wpc-license.html" class="footer__link">WPC License</a></li>
+                        <li><a href="bee-certification.html" class="footer__link">BEE Certification</a></li>
+                        <li><a href="msme-registration.html" class="footer__link">MSME Registration</a></li>
+                        <li><a href="gst-registration.html" class="footer__link">GST Registration</a></li>
+                        <li><a href="iec-code.html" class="footer__link">IEC Code</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h4 class="footer__title">Contact Info</h4>
+                    <div class="footer__contact-item">
+                        <i class="icon-location"></i>
+                        <span>123 Business District, New Delhi</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="icon-phone"></i>
+                        <span>+91 98765 43210</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="icon-email"></i>
+                        <span>info@certifyproconnultancy.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p class="footer__copy">© 2025 Certify Pro Consultancy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/919876543210" target="_blank">
+            <i class="icon-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq__question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq__item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq__icon').textContent = '+';
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    question.querySelector('.faq__icon').textContent = '-';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
