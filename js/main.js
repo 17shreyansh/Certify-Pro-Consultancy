@@ -15,15 +15,19 @@ const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
+        
         const dropdown = toggle.closest('.dropdown');
         const isActive = dropdown.classList.contains('active');
         
-        // Close all other dropdowns
-        document.querySelectorAll('.dropdown').forEach(d => {
-            if (d !== dropdown) {
-                d.classList.remove('active');
-            }
-        });
+        // On mobile, close all other dropdowns first
+        if (window.innerWidth <= 968) {
+            document.querySelectorAll('.dropdown').forEach(d => {
+                if (d !== dropdown) {
+                    d.classList.remove('active');
+                }
+            });
+        }
         
         // Toggle current dropdown
         dropdown.classList.toggle('active', !isActive);
@@ -59,9 +63,18 @@ document.querySelectorAll('.dropdown__menu a').forEach(link => {
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-        navMenu.classList.remove('show-menu');
-        navToggle.classList.remove('active');
+    const isClickInsideNav = navMenu && navMenu.contains(e.target);
+    const isClickOnToggle = navToggle && navToggle.contains(e.target);
+    const isClickOnDropdown = e.target.closest('.dropdown');
+    
+    // Close mobile menu if clicking outside
+    if (!isClickInsideNav && !isClickOnToggle) {
+        if (navMenu) navMenu.classList.remove('show-menu');
+        if (navToggle) navToggle.classList.remove('active');
+    }
+    
+    // Close dropdowns if clicking outside (mobile only)
+    if (window.innerWidth <= 968 && !isClickOnDropdown) {
         document.querySelectorAll('.dropdown').forEach(d => {
             d.classList.remove('active');
         });
@@ -70,32 +83,45 @@ document.addEventListener('click', (e) => {
 
 /*===== DESKTOP DROPDOWN HOVER =====*/
 // Add hover functionality for desktop only
+let desktopDropdownListeners = [];
+
 function initDesktopDropdowns() {
+    // Clear existing listeners
+    desktopDropdownListeners.forEach(({ element, type, handler }) => {
+        element.removeEventListener(type, handler);
+    });
+    desktopDropdownListeners = [];
+    
     if (window.innerWidth > 968) {
         document.querySelectorAll('.dropdown').forEach(dropdown => {
-            dropdown.addEventListener('mouseenter', () => {
+            const mouseEnterHandler = () => {
                 dropdown.classList.add('active');
-            });
+            };
             
-            dropdown.addEventListener('mouseleave', () => {
+            const mouseLeaveHandler = () => {
                 dropdown.classList.remove('active');
-            });
+            };
+            
+            dropdown.addEventListener('mouseenter', mouseEnterHandler);
+            dropdown.addEventListener('mouseleave', mouseLeaveHandler);
+            
+            // Store listeners for cleanup
+            desktopDropdownListeners.push(
+                { element: dropdown, type: 'mouseenter', handler: mouseEnterHandler },
+                { element: dropdown, type: 'mouseleave', handler: mouseLeaveHandler }
+            );
+        });
+    } else {
+        // Close all dropdowns on mobile
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
         });
     }
 }
 
 // Initialize on load and resize
 window.addEventListener('load', initDesktopDropdowns);
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 968) {
-        initDesktopDropdowns();
-    } else {
-        // Remove hover listeners on mobile
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            dropdown.classList.remove('active');
-        });
-    }
-});
+window.addEventListener('resize', debounce(initDesktopDropdowns, 250));
 
 /*===== SCROLL HEADER =====*/
 function scrollHeader() {
@@ -660,6 +686,9 @@ function initLuxuryButtons() {
 
 /*===== INITIALIZE =====*/
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize mobile touch enhancements
+    initMobileTouchEnhancements();
+    
     // Initialize luxury animations
     if (document.querySelector('.luxury-hero')) {
         initLuxuryHero();
@@ -667,12 +696,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Initialize AOS for other sections
-    AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 100
-    });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    }
     
     // Initialize animations
     createParticles();
@@ -732,14 +763,38 @@ const optimizedScrollHandler = debounce(() => {
 
 window.addEventListener('scroll', optimizedScrollHandler);
 
-// Close dropdowns on scroll
-window.addEventListener('scroll', () => {
+// Close dropdowns on scroll (mobile only)
+window.addEventListener('scroll', debounce(() => {
     if (window.innerWidth <= 968) {
         document.querySelectorAll('.dropdown').forEach(dropdown => {
             dropdown.classList.remove('active');
         });
     }
-});
+}, 100));
+
+/*===== MOBILE TOUCH ENHANCEMENTS =====*/
+// Add touch-friendly behavior for mobile devices
+function initMobileTouchEnhancements() {
+    if ('ontouchstart' in window) {
+        // Add touch class to body for CSS targeting
+        document.body.classList.add('touch-device');
+        
+        // Prevent double-tap zoom on buttons
+        document.querySelectorAll('button, .btn, .luxury-nav__link').forEach(element => {
+            element.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                this.click();
+            });
+        });
+        
+        // Improve dropdown touch behavior
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+            });
+        });
+    }
+}
 
 /*===== ACCESSIBILITY ENHANCEMENTS =====*/
 // Keyboard navigation
