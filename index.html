@@ -726,9 +726,38 @@
             <div class="cta__bg"></div>
             <div class="container">
                 <div class="cta__content" data-aos="fade-up">
-                    <h2 class="cta__title">Start Your Certification Journey with Confidence</h2>
-                    <p class="cta__description">Get expert guidance and fast-track your business compliance today</p>
-                    <a href="#contact" class="btn btn--white">Book a Free Consultation</a>
+                    <div class="cta-badge">
+                        <i class="fas fa-rocket"></i>
+                        <span>Ready to Get Started?</span>
+                    </div>
+                    <h2 class="cta__title">
+                        Transform Your Business with <span class="cta-highlight">Expert Compliance</span>
+                    </h2>
+                    <p class="cta__description">Join 500+ successful businesses who trust us for their certification needs. Get started with a free consultation today.</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn--white">
+                            <i class="fas fa-phone"></i>
+                            <span>Get Free Consultation</span>
+                        </a>
+                        <a href="#services" class="btn btn--outline-white">
+                            <i class="fas fa-list"></i>
+                            <span>View All Services</span>
+                        </a>
+                    </div>
+                    <div class="cta-features">
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Success Rate</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Fast Processing</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Guaranteed Compliance</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -736,45 +765,118 @@
         <!-- Contact Form -->
         <section class="contact section" id="contact">
             <div class="container">
-                <h2 class="section__title text-center" data-aos="fade-up">Get In Touch</h2>
+                <div class="contact-header" data-aos="fade-up">
+                    <span class="contact-tag">
+                        <i class="fas fa-envelope"></i>
+                        Contact Us
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <h2 class="section__title text-center">
+                        Get In <span class="title-gradient">Touch</span>
+                    </h2>
+                    <div class="contact-underline">
+                        <div class="underline-dot"></div>
+                        <div class="underline-line"></div>
+                        <div class="underline-dot"></div>
+                    </div>
+                    <p class="section-subtitle text-center">Ready to start your compliance journey? Let's discuss your requirements and get you certified quickly.</p>
+                </div>
                 <div class="contact__container grid" data-aos="fade-up" data-aos-delay="200">
                     <div class="contact__form">
+                        <div class="form-header">
+                            <h3>Send us a Message</h3>
+                            <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                        </div>
                         <form class="form" id="contact-form">
-                            <div class="form__group">
-                                <input type="text" class="form__input" placeholder="Your Name" required>
+                            <div class="form-row">
+                                <div class="form__group">
+                                    <input type="text" class="form__input" placeholder="Your Name" required>
+                                    <i class="fas fa-user form-icon"></i>
+                                </div>
+                                <div class="form__group">
+                                    <input type="email" class="form__input" placeholder="Your Email" required>
+                                    <i class="fas fa-envelope form-icon"></i>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form__group">
+                                    <input type="tel" class="form__input" placeholder="Your Phone" required>
+                                    <i class="fas fa-phone form-icon"></i>
+                                </div>
+                                <div class="form__group">
+                                    <select class="form__input" required>
+                                        <option value="">Select Service</option>
+                                        <option value="bis">BIS Registration</option>
+                                        <option value="bee">BEE Certification</option>
+                                        <option value="wpc">WPC License</option>
+                                        <option value="msme">MSME Registration</option>
+                                        <option value="gst">GST Registration</option>
+                                        <option value="other">Other Services</option>
+                                    </select>
+                                    <i class="fas fa-cogs form-icon"></i>
+                                </div>
                             </div>
                             <div class="form__group">
-                                <input type="email" class="form__input" placeholder="Your Email" required>
+                                <textarea class="form__input form__textarea" placeholder="Tell us about your requirements..." required></textarea>
+                                <i class="fas fa-comment form-icon"></i>
                             </div>
-                            <div class="form__group">
-                                <input type="tel" class="form__input" placeholder="Your Phone" required>
-                            </div>
-                            <div class="form__group">
-                                <textarea class="form__input form__textarea" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn--primary form__btn">Send Message</button>
+                            <button type="submit" class="btn btn--primary form__btn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
                         </form>
                     </div>
                     <div class="contact__info">
-                        <div class="contact__item">
-                            <i class="icon-location"></i>
-                            <div>
-                                <h4>Address</h4>
-                                <p>123 Business District, New Delhi, India</p>
+                        <div class="info-header">
+                            <h3>Contact Information</h3>
+                            <p>Reach out to us through any of these channels</p>
+                        </div>
+                        <div class="contact__items">
+                            <div class="contact__item">
+                                <div class="contact__icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact__details">
+                                    <h4>Office Address</h4>
+                                    <p>123 Business District, New Delhi, India 110001</p>
+                                </div>
+                            </div>
+                            <div class="contact__item">
+                                <div class="contact__icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact__details">
+                                    <h4>Phone Number</h4>
+                                    <p>+91 98765 43210</p>
+                                    <span class="contact-note">Available 9 AM - 6 PM</span>
+                                </div>
+                            </div>
+                            <div class="contact__item">
+                                <div class="contact__icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact__details">
+                                    <h4>Email Address</h4>
+                                    <p>info@certifyproconsultancy.com</p>
+                                    <span class="contact-note">We reply within 24 hours</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="contact__item">
-                            <i class="icon-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+91 98765 43210</p>
-                            </div>
-                        </div>
-                        <div class="contact__item">
-                            <i class="icon-email"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>info@certifyproconsultancy.com</p>
+                        <div class="contact-social">
+                            <h4>Follow Us</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -789,57 +891,100 @@
         <div class="container">
             <div class="footer__container grid">
                 <div class="footer__content">
-                    <img src="assets/logo.png" alt="Certify Pro Consultancy" class="footer__logo">
+                    <div class="footer__brand">
+                        <img src="logo.png" alt="Certify Pro Consultancy" class="footer__logo">
+                        <h3 class="footer__brand-name">Certify Pro Consultancy</h3>
+                    </div>
                     <p class="footer__description">
-                        Professional certification consultancy helping businesses achieve compliance and growth through expert guidance.
+                        Your trusted partner for business compliance and certification. We help companies navigate India's regulatory landscape with expertise and efficiency.
                     </p>
+                    <div class="footer__stats">
+                        <div class="footer-stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Clients</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Success</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                    </div>
                     <div class="footer__social">
-                        <a href="#" class="footer__social-link"><i class="icon-facebook"></i></a>
-                        <a href="#" class="footer__social-link"><i class="icon-twitter"></i></a>
-                        <a href="#" class="footer__social-link"><i class="icon-linkedin"></i></a>
-                        <a href="#" class="footer__social-link"><i class="icon-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer__links">
                     <h4 class="footer__title">Quick Links</h4>
                     <ul class="footer__list">
-                        <li><a href="index.html" class="footer__link">Home</a></li>
-                        <li><a href="about.html" class="footer__link">About</a></li>
-                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                        <li><a href="#home" class="footer__link">Home</a></li>
+                        <li><a href="#about-preview" class="footer__link">About Us</a></li>
+                        <li><a href="#services" class="footer__link">Services</a></li>
+                        <li><a href="#contact" class="footer__link">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer__services">
-                    <h4 class="footer__title">Services</h4>
+                    <h4 class="footer__title">Our Services</h4>
                     <ul class="footer__list">
-                        <li><a href="bis-registration.html" class="footer__link">BIS Registration</a></li>
-                        <li><a href="erp-consultation.html" class="footer__link">ERP Consultation</a></li>
-                        <li><a href="wpc-license.html" class="footer__link">WPC License</a></li>
-                        <li><a href="bee-certification.html" class="footer__link">BEE Certification</a></li>
-                        <li><a href="msme-registration.html" class="footer__link">MSME Registration</a></li>
-                        <li><a href="gst-registration.html" class="footer__link">GST Registration</a></li>
-                        <li><a href="iec-code.html" class="footer__link">IEC Code</a></li>
+                        <li><a href="#contact" class="footer__link">BIS Registration</a></li>
+                        <li><a href="#contact" class="footer__link">BEE Certification</a></li>
+                        <li><a href="#contact" class="footer__link">WPC License</a></li>
+                        <li><a href="#contact" class="footer__link">MSME Registration</a></li>
+                        <li><a href="#contact" class="footer__link">GST Registration</a></li>
+                        <li><a href="#contact" class="footer__link">ERP Consultation</a></li>
                     </ul>
                 </div>
                 <div class="footer__contact">
-                    <h4 class="footer__title">Contact Info</h4>
-                    <div class="footer__contact-item">
-                        <i class="icon-location"></i>
-                        <span>123 Business District, New Delhi</span>
+                    <h4 class="footer__title">Get In Touch</h4>
+                    <div class="footer__contact-items">
+                        <div class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="contact-label">Address</span>
+                                <span class="contact-value">123 Business District, New Delhi, India</span>
+                            </div>
+                        </div>
+                        <div class="footer__contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+91 98765 43210</span>
+                            </div>
+                        </div>
+                        <div class="footer__contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">info@certifyproconsultancy.com</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="footer__contact-item">
-                        <i class="icon-phone"></i>
-                        <span>+91 98765 43210</span>
-                    </div>
-                    <div class="footer__contact-item">
-                        <i class="icon-email"></i>
-                        <span>info@certifyproconnultancy.com</span>
+                    <div class="footer__cta">
+                        <a href="#contact" class="footer-btn">
+                            <i class="fas fa-phone"></i>
+                            <span>Free Consultation</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer__bottom">
             <div class="container">
-                <p class="footer__copy">© 2025 Certify Pro Consultancy. All rights reserved.</p>
+                <div class="footer__bottom-content">
+                    <p class="footer__copy">© 2025 Certify Pro Consultancy. All rights reserved.</p>
+                    <div class="footer__legal">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                    </div>
+                </div>
+                <div class="footer__credit">
+                    <p>Made with <i class="fas fa-heart"></i> and crafted by <strong>AFFOBE</strong></p>
+                </div>
             </div>
         </div>
     </footer>
