@@ -3,147 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GST Registration - Certify Pro Consultancy</title>
+    <title>GST Registration - Goods and Services Tax | Certify Pro Consultancy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bee-professional.css">
 </head>
 <body>
-    <header class="header" id="header">
-        <nav class="nav container">
-            <div class="nav__logo">
-                <img src="assets/logo.png" alt="Certify Pro Consultancy" class="nav__logo-img">
+    <!-- Header -->
+    <header class="luxury-header" id="header">
+        <nav class="luxury-nav">
+            <div class="luxury-nav__logo">
+                <img src="logo.png" alt="Certify Pro Consultancy">
             </div>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-                    <li class="nav__item dropdown">
-                        <a href="#services" class="nav__link active-link">Services</a>
+            <div class="luxury-nav__menu" id="nav-menu">
+                <ul class="luxury-nav__list">
+                    <li class="luxury-nav__item">
+                        <a href="index.html" class="luxury-nav__link">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="luxury-nav__item dropdown">
+                        <a href="index.html#services" class="luxury-nav__link dropdown-toggle">
+                            <i class="fas fa-cogs nav-icon"></i>
+                            <span>Services</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
                         <ul class="dropdown__menu">
-                            <li><a href="bis-registration.html">BIS Registration</a></li>
-                            <li><a href="erp-consultation.html">ERP Consultation</a></li>
-                            <li><a href="wpc-license.html">WPC License</a></li>
-                            <li><a href="bee-certification.html">BEE Certification</a></li>
-                            <li><a href="msme-registration.html">MSME Registration</a></li>
-                            <li><a href="gst-registration.html">GST Registration</a></li>
-                            <li><a href="iec-code.html">IEC Code Registration</a></li>
+                            <li><a href="bis-registration.html"><i class="fas fa-certificate"></i>BIS Registration</a></li>
+                            <li><a href="erp-consultation.html"><i class="fas fa-laptop-code"></i>ERP Consultation</a></li>
+                            <li><a href="wpc-license.html"><i class="fas fa-wifi"></i>WPC License</a></li>
+                            <li><a href="bee-certification.html"><i class="fas fa-bolt"></i>BEE Certification</a></li>
+                            <li><a href="epr-certification.html"><i class="fas fa-recycle"></i>EPR Certification</a></li>
+                            <li><a href="msme-registration.html"><i class="fas fa-industry"></i>MSME Registration</a></li>
+                            <li><a href="gst-registration.html"><i class="fas fa-receipt"></i>GST Registration</a></li>
+                            <li><a href="iec-code.html"><i class="fas fa-globe"></i>IEC Code Registration</a></li>
                         </ul>
                     </li>
-                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+                    <li class="luxury-nav__item">
+                        <a href="about.html" class="luxury-nav__link">
+                            <i class="fas fa-users nav-icon"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="luxury-nav__item">
+                        <a href="contact.html" class="luxury-nav__link">
+                            <i class="fas fa-envelope nav-icon"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <div class="nav__toggle" id="nav-toggle"><span></span><span></span><span></span></div>
+            <div class="nav-actions">
+                <button class="luxury-nav__cta">
+                    <i class="fas fa-rocket"></i>
+                    <span>Get Started</span>
+                </button>
+            </div>
+            <div class="luxury-nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
     <main class="main">
-        <section class="service-hero">
-            <div class="service-hero__bg"></div>
+        <!-- Page Header -->
+        <section class="page-header">
             <div class="container">
-                <div class="service-hero__content" data-aos="fade-up">
-                    <h1 class="service-hero__title">GST Registration Services</h1>
-                    <p class="service-hero__subtitle">Goods and Services Tax registration and compliance for seamless business operations</p>
+                <div class="page-header__content">
+                    <h1 class="page-title">GST Registration</h1>
+                    <p class="page-subtitle">Goods and Services Tax Registration and Compliance Services</p>
                 </div>
             </div>
         </section>
 
-        <section class="service-intro section">
+        <!-- Introduction Section -->
+        <section class="content-section section">
             <div class="container">
-                <div class="service-intro__container grid">
-                    <div class="service-intro__content" data-aos="fade-right">
-                        <h2 class="section__title">What is GST Registration?</h2>
-                        <p class="service-intro__text">
-                            GST (Goods and Services Tax) registration is mandatory for businesses with annual turnover exceeding ₹20 lakhs (₹10 lakhs for northeastern states). It enables businesses to collect GST from customers and claim input tax credits.
-                        </p>
-                        <p class="service-intro__text">
-                            GST registration provides legal recognition to your business and is essential for interstate trade, government contracts, and claiming input tax benefits.
-                        </p>
+                <h2></h2>
+                <p>GST (Goods and Services Tax) registration is a crucial step for businesses operating in India. It's a unified taxation system that has replaced several indirect taxes. This article will guide you through the process of GST registration, including the necessary documents and steps involved.</p>
+            </div>
+        </section>
+
+        <!-- What is GST Section -->
+        <section class="content-section section">
+            <div class="container">
+                <h2>What is GST Registration?</h2>
+                <p>GST registration is the process by which a taxpayer gets registered under the Goods and Services Tax law and receives a unique GST identification number. It is mandatory for businesses with an annual turnover exceeding the prescribed threshold to register for GST.</p>
+            </div>
+        </section>
+
+        <!-- Who Needs GST Section -->
+        <section class="content-section section">
+            <div class="container">
+                <h2>Who Needs to Register for GST?</h2>
+                <p>Any individual, partnership firm, LLP (Limited Liability Partnership), company, or any other entity involved in the supply of goods or services must register for GST if their turnover exceeds the threshold limit, which varies based on the type of business and location.</p>
+            </div>
+        </section>
+
+        <!-- Document Requirements Section -->
+        <section class="content-section section">
+            <div class="container">
+                <h2>Document Required for GST Registration</h2>
+                <div class="product-list">
+                    <div class="product-item">PAN (Permanent Account Number) of the business entity</div>
+                    <div class="product-item">Proof of constitution (partnership deed, certificate of incorporation, etc.)</div>
+                    <div class="product-item">Identity and address proof of promoters/partners/directors</div>
+                    <div class="product-item">Photographs of promoters/partners/directors</div>
+                    <div class="product-item">Address proof of principal place of business</div>
+                    <div class="product-item">Bank account details</div>
+                    <div class="product-item">Digital signature (for companies and LLPs)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion Section -->
+        <section class="content-section section">
+            <div class="container">
+                <p>GST registration is a fundamental requirement for businesses in India to comply with the GST law. By understanding the process and gathering the necessary documents, businesses can smoothly obtain GST registration and ensure compliance with the tax regulations.</p>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="content-section section">
+            <div class="container">
+                <h2>Why Choose Us?</h2>
+                <div class="why-choose-list">
+                    <div class="choose-item">
+                        <h4>Expertise</h4>
+                        <p>Our team comprises seasoned professionals with in-depth knowledge of GST regulations and procedures, ensuring accurate and timely compliance.</p>
                     </div>
-                    <div class="service-intro__img" data-aos="fade-left">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="GST Registration">
+                    <div class="choose-item">
+                        <h4>Efficiency</h4>
+                        <p>We streamline the registration process, minimizing time and resources expended while expediting market access for your products.</p>
+                    </div>
+                    <div class="choose-item">
+                        <h4>Comprehensive Support</h4>
+                        <p>From initial consultation to post-registration assistance, we offer end-to-end support, addressing all your compliance needs under one roof.</p>
+                    </div>
+                    <div class="choose-item">
+                        <h4>Reliability</h4>
+                        <p>With a proven track record of successful registrations across diverse product categories, we are a trusted partner for businesses seeking GST Registration.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="service-cta section">
-            <div class="service-cta__bg"></div>
+        <!-- Contact Section -->
+        <section class="contact-section section">
             <div class="container">
-                <div class="service-cta__content" data-aos="fade-up">
-                    <h2 class="service-cta__title">Get GST Registered</h2>
-                    <p class="service-cta__description">Ensure tax compliance and business legitimacy</p>
-                    <a href="contact.html" class="btn btn--white">Get This Service</a>
+                <div class="contact-cta">
+                    <h2>Need GST Registration?</h2>
+                    <p>Contact us today for professional GST registration services.</p>
+                    <a href="contact.html" class="btn btn--primary">Get Started</a>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer__gradient"></div>
         <div class="container">
             <div class="footer__container grid">
                 <div class="footer__content">
-                    <img src="assets/logo.png" alt="Certify Pro Consultancy" class="footer__logo">
-                    <p class="footer__description">Professional certification consultancy helping businesses achieve compliance and growth through expert guidance.</p>
+                    <div class="footer__brand">
+                        <img src="logo.png" alt="Certify Pro Consultancy" class="footer__logo">
+                        <h3 class="footer__brand-name">Certify Pro Consultancy</h3>
+                    </div>
+                    <p class="footer__description">
+                        Your trusted partner for business compliance and certification. We help companies navigate India's regulatory landscape with expertise and efficiency.
+                    </p>
+                    <div class="footer__stats">
+                        <div class="footer-stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Clients</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Success</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                    </div>
                     <div class="footer__social">
-                        <a href="#" class="footer__social-link"><i class="icon-facebook"></i></a>
-                        <a href="#" class="footer__social-link"><i class="icon-twitter"></i></a>
-                        <a href="#" class="footer__social-link"><i class="icon-linkedin"></i></a>
-                        <a href="#" class="footer__social-link"><i class="icon-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer__links">
                     <h4 class="footer__title">Quick Links</h4>
                     <ul class="footer__list">
                         <li><a href="index.html" class="footer__link">Home</a></li>
-                        <li><a href="about.html" class="footer__link">About</a></li>
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="index.html#services" class="footer__link">Services</a></li>
                         <li><a href="contact.html" class="footer__link">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer__services">
-                    <h4 class="footer__title">Services</h4>
+                    <h4 class="footer__title">Our Services</h4>
                     <ul class="footer__list">
                         <li><a href="bis-registration.html" class="footer__link">BIS Registration</a></li>
-                        <li><a href="erp-consultation.html" class="footer__link">ERP Consultation</a></li>
-                        <li><a href="wpc-license.html" class="footer__link">WPC License</a></li>
                         <li><a href="bee-certification.html" class="footer__link">BEE Certification</a></li>
+                        <li><a href="epr-certification.html" class="footer__link">EPR Certification</a></li>
+                        <li><a href="wpc-license.html" class="footer__link">WPC License</a></li>
                         <li><a href="msme-registration.html" class="footer__link">MSME Registration</a></li>
                         <li><a href="gst-registration.html" class="footer__link">GST Registration</a></li>
-                        <li><a href="iec-code.html" class="footer__link">IEC Code</a></li>
+                        <li><a href="erp-consultation.html" class="footer__link">ERP Consultation</a></li>
                     </ul>
                 </div>
                 <div class="footer__contact">
-                    <h4 class="footer__title">Contact Info</h4>
-                    <div class="footer__contact-item">
-                        <i class="icon-location"></i>
-                        <span>123 Business District, New Delhi</span>
+                    <h4 class="footer__title">Get In Touch</h4>
+                    <div class="footer__contact-items">
+                        <div class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="contact-label">Address</span>
+                                <span class="contact-value">123 Business District, New Delhi, India</span>
+                            </div>
+                        </div>
+                        <div class="footer__contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+91 98765 43210</span>
+                            </div>
+                        </div>
+                        <div class="footer__contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">info@certifyproconsultancy.com</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="footer__contact-item">
-                        <i class="icon-phone"></i>
-                        <span>+91 98765 43210</span>
-                    </div>
-                    <div class="footer__contact-item">
-                        <i class="icon-email"></i>
-                        <span>info@certifyproconnultancy.com</span>
+                    <div class="footer__cta">
+                        <a href="contact.html" class="footer-btn">
+                            <i class="fas fa-phone"></i>
+                            <span>Free Consultation</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer__bottom">
             <div class="container">
-                <p class="footer__copy">© 2025 Certify Pro Consultancy. All rights reserved.</p>
+                <div class="footer__bottom-content">
+                    <p class="footer__copy">© 2025 Certify Pro Consultancy. All rights reserved.</p>
+                    <div class="footer__legal">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                    </div>
+                </div>
+                <div class="footer__credit">
+                    <p>Made with <i class="fas fa-heart"></i> and crafted by <strong>AFFOBE</strong></p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- WhatsApp Float -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/919876543210" target="_blank"><i class="icon-whatsapp"></i></a>
+        <a href="https://wa.me/919876543210" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
