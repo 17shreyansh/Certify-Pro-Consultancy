@@ -386,14 +386,15 @@ function animateProcess() {
 
 /*===== COUNTER ANIMATION =====*/
 function animateCounters() {
-    const counters = document.querySelectorAll('[data-counter]');
+    const counters = document.querySelectorAll('.counter');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const counter = entry.target;
-                const target = parseInt(counter.getAttribute('data-counter'));
+                const target = parseFloat(counter.getAttribute('data-target'));
                 const duration = 2000;
+                const isDecimal = target % 1 !== 0;
                 const step = target / (duration / 16);
                 let current = 0;
                 
@@ -403,13 +404,18 @@ function animateCounters() {
                         current = target;
                         clearInterval(timer);
                     }
-                    counter.textContent = Math.floor(current);
+                    
+                    if (isDecimal) {
+                        counter.textContent = current.toFixed(1);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
                 }, 16);
                 
                 observer.unobserve(counter);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
     
     counters.forEach(counter => observer.observe(counter));
 }
@@ -710,6 +716,11 @@ document.addEventListener('DOMContentLoaded', function() {
     animateProcess();
     animateCounters();
     enhanceForms();
+    
+    // Initialize counter animations on page load
+    setTimeout(() => {
+        animateCounters();
+    }, 500);
     
     // Initialize dropdown functionality
     initDesktopDropdowns();
