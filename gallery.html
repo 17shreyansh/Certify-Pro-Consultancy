@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Certify Pro Consultancy</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .gallery-hero {
+            padding: 6rem 0 4rem;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            text-align: center;
+        }
+
+        .gallery-hero__title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .gallery-hero__subtitle {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gallery-section {
+            padding: 4rem 0;
+            background: var(--white-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            background: var(--white-color);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 3rem;
+        }
+
+
+
+        .team-section {
+            background: var(--white-color);
+            padding: 4rem 0;
+        }
+
+        .audit-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            padding: 4rem 0;
+        }
+
+        .events-section {
+            background: var(--white-color);
+            padding: 4rem 0;
+        }
+
+        .swiper {
+            padding: 1rem 0 4rem;
+            overflow: hidden;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--primary-color);
+            background: var(--white-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: var(--primary-color);
+            color: var(--white-color);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(142, 61, 187, 0.3);
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .slide-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            background: var(--white-color);
+        }
+
+        .slide-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .slide-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .slide-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .slide-card__content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .slide-card__name {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .swiper-pagination {
+            bottom: 10px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: rgba(142, 61, 187, 0.3);
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        .swiper-pagination-bullet-active-main {
+            background: var(--primary-color);
+        }
+
+        @media screen and (max-width: 968px) {
+            .gallery-hero {
+                padding: 5rem 0 3rem;
+            }
+            
+            .gallery-hero__title {
+                font-size: 2.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .gallery-item img {
+                height: 220px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .slide-card img {
+                height: 300px;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .gallery-hero {
+                padding: 4rem 0 2rem;
+            }
+            
+            .gallery-hero__title {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .gallery-item img {
+                height: 200px;
+            }
+            
+            
+            
+            .slide-card__content {
+                padding: 1.5rem;
+            }
+            
+            .swiper-button-next,
+            .swiper-button-prev {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Luxury Header -->
+    <header class="luxury-header" id="header">
+        <nav class="luxury-nav">
+            <div class="luxury-nav__logo">
+                <img src="logo.png" alt="Certify Pro Consultancy">
+            </div>
+            <div class="luxury-nav__menu" id="nav-menu">
+                <ul class="luxury-nav__list">
+                    <li class="luxury-nav__item">
+                        <a href="index.html" class="luxury-nav__link">
+                            <i class="fas fa-home nav-icon"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="luxury-nav__item dropdown">
+                        <a href="#services" class="luxury-nav__link dropdown-toggle">
+                            <i class="fas fa-cogs nav-icon"></i>
+                            <span>Services</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown__menu">
+                            <li><a href="bis-registration.html"><i class="fas fa-certificate"></i>BIS Registration</a></li>
+                            <li><a href="erp-consultation.html"><i class="fas fa-laptop-code"></i>ERP Consultation</a></li>
+                            <li><a href="wpc-license.html"><i class="fas fa-wifi"></i>WPC License</a></li>
+                            <li><a href="bee-certification.html"><i class="fas fa-bolt"></i>BEE Certification</a></li>
+                            <li><a href="epr-certification.html"><i class="fas fa-recycle"></i>EPR Certification</a></li>
+                            <li><a href="msme-registration.html"><i class="fas fa-industry"></i>MSME Registration</a></li>
+                            <li><a href="gst-registration.html"><i class="fas fa-receipt"></i>GST Registration</a></li>
+                            <li><a href="iec-code.html"><i class="fas fa-globe"></i>IEC Code Registration</a></li>
+                            <li><a href="iso-certification.html"><i class="fas fa-award"></i>ISO Certification</a></li>
+                        </ul>
+                    </li>
+                    <li class="luxury-nav__item">
+                        <a href="about.html" class="luxury-nav__link">
+                            <i class="fas fa-users nav-icon"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="luxury-nav__item">
+                        <a href="gallery.html" class="luxury-nav__link active-link">
+                            <i class="fas fa-images nav-icon"></i>
+                            <span>Gallery</span>
+                        </a>
+                    </li>
+                    <li class="luxury-nav__item">
+                        <a href="contact.html" class="luxury-nav__link">
+                            <i class="fas fa-envelope nav-icon"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <button class="luxury-nav__cta">
+                    <i class="fas fa-rocket"></i>
+                    <span>Get Started</span>
+                </button>
+            </div>
+            <div class="luxury-nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Gallery Hero -->
+    <section class="gallery-hero">
+        <div class="container">
+            <h1 class="gallery-hero__title">Our Gallery</h1>
+            <p class="gallery-hero__subtitle">Showcasing our professional journey and team excellence</p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <div class="swiper team-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-card">
+                            <img src="assets/gellery/team/Business development manager.jpg" alt="Business Development Manager">
+                            <div class="slide-card__content">
+                                <h3 class="slide-card__name">Business Development Manager</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-card">
+                            <img src="assets/gellery/team/Compliancemanager.jpg" alt="Compliance Manager">
+                            <div class="slide-card__content">
+                                <h3 class="slide-card__name">Compliance Manager</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-card">
+                            <img src="assets/gellery/team/Project Manager.jpg" alt="Project Manager">
+                            <div class="slide-card__content">
+                                <h3 class="slide-card__name">Project Manager</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-card">
+                            <img src="assets/gellery/team/Senior Manager.jpg" alt="Senior Manager">
+                            <div class="slide-card__content">
+                                <h3 class="slide-card__name">Senior Manager</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-card">
+                            <img src="assets/gellery/team/Technical head.jpg" alt="Technical Head">
+                            <div class="slide-card__content">
+                                <h3 class="slide-card__name">Technical Head</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audit Section -->
+    <section class="audit-section">
+        <div class="container">
+            <h2 class="section-title">Audit Sessions</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/gellery/audit/IMG-20251103-WA0038.jpg" alt="Audit Session">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/audit/IMG-20251103-WA0039.jpg" alt="Audit Documentation">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/audit/IMG-20251103-WA0040.jpg" alt="Quality Assessment">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/audit/IMG-20251103-WA0041.jpg" alt="Certification Process">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/audit/IMG-20251103-WA0042.jpg" alt="Standards Review">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/audit/IMG-20251103-WA0043.jpg" alt="Compliance Check">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/audit/IMG-20251103-WA0044.jpg" alt="Audit Process">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/audit/IMG-20251103-WA0045.jpg" alt="Quality Control">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/audit/IMG-20251103-WA0046.jpg" alt="Compliance Review">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/audit/IMG-20251103-WA0047.jpg" alt="Audit Documentation">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/audit/IMG-20251103-WA0048.jpg" alt="Final Review">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <h2 class="section-title">Events & Activities</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/gellery/events/IMG-20251103-WA0051.jpg" alt="Corporate Event">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/events/IMG-20251103-WA0052.jpg" alt="Team Building">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/events/IMG-20251103-WA0053.jpg" alt="Conference">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/events/IMG-20251103-WA0054.jpg" alt="Workshop">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/events/IMG-20251103-WA0055.jpg" alt="Seminar">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/events/IMG-20251103-WA0056.jpg" alt="Networking Event">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/events/IMG-20251103-WA0057.jpg" alt="Professional Meeting">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gellery/events/IMG-20251103-WA0058.jpg" alt="Business Event">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__gradient"></div>
+        <div class="container">
+            <div class="footer__container grid">
+                <div class="footer__content">
+                    <div class="footer__brand">
+                        <img src="logo.png" alt="Certify Pro Consultancy" class="footer__logo">
+                        <h3 class="footer__brand-name">Certify Pro Consultancy</h3>
+                    </div>
+                    <p class="footer__description">
+                        Your trusted partner for business compliance and certification. We help companies navigate India's regulatory landscape with expertise and efficiency.
+                    </p>
+                    <div class="footer__stats">
+                        <div class="footer-stat">
+                            <span class="stat-number counter" data-target="500">0</span><span>+</span>
+                            <span class="stat-label">Clients</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="stat-number counter" data-target="98">0</span><span>%</span>
+                            <span class="stat-label">Success</span>
+                        </div>
+                        <div class="footer-stat">
+                            <span class="stat-number counter" data-target="12">0</span><span>+</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                    </div>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__list">
+                        <li><a href="index.html" class="footer__link">Home</a></li>
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__services">
+                    <h4 class="footer__title">Our Services</h4>
+                    <ul class="footer__list">
+                        <li><a href="bis-registration.html" class="footer__link">BIS Registration</a></li>
+                        <li><a href="bee-certification.html" class="footer__link">BEE Certification</a></li>
+                        <li><a href="wpc-license.html" class="footer__link">WPC License</a></li>
+                        <li><a href="msme-registration.html" class="footer__link">MSME Registration</a></li>
+                        <li><a href="gst-registration.html" class="footer__link">GST Registration</a></li>
+                        <li><a href="erp-consultation.html" class="footer__link">ERP Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h4 class="footer__title">Get In Touch</h4>
+                    <div class="footer__contact-items">
+                        <div class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span class="contact-label">Address</span>
+                                <span class="contact-value">C-1/4-5, 3rd floor, rama park dwarka mor metro station New Delhi 110059</span>
+                            </div>
+                        </div>
+                        <div class="footer__contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+91 8595509780 / +91 8595532138</span>
+                            </div>
+                        </div>
+                        <div class="footer__contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">info@certifyproconsultancy.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer__cta">
+                        <a href="contact.html" class="footer-btn">
+                            <i class="fas fa-phone"></i>
+                            <span>Free Consultation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-content">
+                    <p class="footer__copy">© 2025 Certify Pro Consultancy. All rights reserved.</p>
+                    <div class="footer__legal">
+                        <a href="#" class="legal-link">Privacy Policy</a>
+                        <a href="#" class="legal-link">Terms of Service</a>
+                    </div>
+                </div>
+                <div class="footer__credit">
+                    <p>Made with <i class="fas fa-heart"></i> and crafted by <strong>AFFOBE</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/918595509780" target="_blank">
+            <i class="icon-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Enhanced Team Swiper with smooth transitions
+        const teamSwiper = new Swiper('.team-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            speed: 800,
+            effect: 'slide',
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: '.team-swiper .swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: '.team-swiper .swiper-button-next',
+                prevEl: '.team-swiper .swiper-button-prev',
+            },
+            grabCursor: true,
+            centeredSlides: false,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                },
+                968: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                }
+            }
+        });
+    </script>
+</body>
+</html>
