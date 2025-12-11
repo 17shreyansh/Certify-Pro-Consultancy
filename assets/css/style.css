@@ -671,7 +671,6 @@ ul {
 
 /* Service Page Header */
 .page-header {
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
   padding: 300px 0 60px;
   text-align: center;
   position: relative;
@@ -823,7 +822,7 @@ ul {
 }
 
 .content-section:nth-child(even) {
-  background: var(--light-gray);
+  background: linear-gradient(135deg, rgba(167, 135, 185, 0.24) 0%, rgba(153, 63, 202, 0.426) 100%);
 }
 
 .content-section h2 {
