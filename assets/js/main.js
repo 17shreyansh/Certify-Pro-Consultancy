@@ -567,13 +567,51 @@ function hideLoading(loader) {
 /*===== LUXURY HERO ANIMATIONS =====*/
 function initLuxuryHero() {
     const slides = document.querySelectorAll('.content-slide');
-    const heroBg = document.querySelector('.luxury-hero__bg');
+    const serviceCards = document.querySelectorAll('.service-card');
+    const heroBgImage = document.querySelector('.hero-bg-image');
     let currentSlide = 0;
     
+    // Background images mapping to services
+    const backgroundImages = [
+        'assets/hero/BIS.jpg',     // BIS Registration
+        'assets/hero/WPC.jpg',     // WPC License
+        'assets/hero/BEE.jpg',     // BEE Certification
+        'assets/hero/MSME.webp',   // MSME Registration
+        'assets/hero/GST.jpg',     // GST Registration
+        'assets/hero/IEC.jpg',     // IEC Code
+        'assets/hero/EPR.jpg',     // EPR Authorization
+        'assets/hero/ISO.jpg'      // ISO Certification
+    ];
+    
     function changeSlide() {
+        // Remove active from current slide and service card
         slides[currentSlide].classList.remove('active');
+        if (serviceCards[currentSlide]) {
+            serviceCards[currentSlide].classList.remove('active');
+        }
+        
+        // Move to next slide
         currentSlide = (currentSlide + 1) % slides.length;
+        
+        // Add active to new slide and service card
         slides[currentSlide].classList.add('active');
+        if (serviceCards[currentSlide]) {
+            serviceCards[currentSlide].classList.add('active');
+        }
+        
+        // Change background image with smooth transition
+        if (heroBgImage && backgroundImages[currentSlide]) {
+            heroBgImage.style.opacity = '0';
+            setTimeout(() => {
+                heroBgImage.style.backgroundImage = `url('${backgroundImages[currentSlide]}')`;
+                heroBgImage.style.opacity = '1';
+            }, 300);
+        }
+    }
+    
+    // Initialize first service card as active
+    if (serviceCards[0]) {
+        serviceCards[0].classList.add('active');
     }
     
     // Auto-change slides
